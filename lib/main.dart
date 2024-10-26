@@ -13,6 +13,7 @@ class MovesApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Moves',
       debugShowCheckedModeBanner: false,
+      home: Scaffold(),
      
     );
   }
