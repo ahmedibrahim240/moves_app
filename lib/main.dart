@@ -14,9 +14,17 @@ class MovesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FlutterNativeSplash.remove();
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Moves',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          centerTitle: false,
+          backgroundColor: Color.fromARGB(255, 215, 0, 0),
+        ),
+      ),
       home: Scaffold(),
     );
   }
