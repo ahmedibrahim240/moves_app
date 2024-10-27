@@ -9,6 +9,9 @@ class MoviesCubit extends Cubit<MoviesState> {
   MoviesCubit({required this.initialPage}) : super(MoviesInitial());
   int initialPage;
   void loadMoviePopular() {
+    if (initialPage <= 0) {
+      initialPage = 1;
+    }
     emit(MoviesLoading());
     MoviesService.instance.loadMoviePopular(initialPage).then(
           (value) => value.fold(
