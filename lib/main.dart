@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:moves_app/app_router.dart';
+import 'package:moves_app/constants/app_colors.dart';
 import 'package:moves_app/logic/app_bloc_observer.dart';
 import 'package:moves_app/logic/movies_cubit/movies_cubit.dart';
 
@@ -26,13 +27,14 @@ class _MovesAppState extends State<MovesApp> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      SizeConfig.init(context, designSize: const Size(360, 800));
       FlutterNativeSplash.remove();
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context, designSize: const Size(360, 800));
+
     return BlocProvider(
       create: (context) => MoviesCubit(initialPage: 1),
       child: MaterialApp(
@@ -40,6 +42,7 @@ class _MovesAppState extends State<MovesApp> {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           brightness: Brightness.dark,
+          primaryColor: AppColors.kPrimaryColor,
           appBarTheme: const AppBarTheme(
             elevation: 0,
             centerTitle: true,

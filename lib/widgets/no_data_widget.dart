@@ -20,6 +20,7 @@ class EmptyDataWidget extends StatelessWidget {
           fontSize: 16,
         ),
         child: AnimatedTextKit(
+          repeatForever: true,
           animatedTexts: [
             TyperAnimatedText('Data Not Found'),
           ],

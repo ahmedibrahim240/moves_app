@@ -7,6 +7,7 @@ import 'package:moves_app/widgets/loading_widget.dart';
 import '../../widgets/custom_text.dart';
 import '../../widgets/error_widget.dart';
 import '../../widgets/no_data_widget.dart';
+import 'widget/moive_grad_view_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 error: state.error,
               );
             case MoviesListSuccess():
-              return Container();
+              return MoviesGradViewWidget(movies: state.movies);
 
             default:
               return const EmptyDataWidget();

@@ -42,7 +42,7 @@ class CustomText extends StatelessWidget {
       style: GoogleFonts.abel(
         letterSpacing: letterSpacing,
         decoration: (!underline) ? null : TextDecoration.underline,
-        color: color,
+        color: color ?? Colors.white,
         fontSize: size ?? 16,
         fontWeight: fontWeight,
         height: heighText ?? 1,

@@ -17,8 +17,12 @@ class CustomErrorWidget extends StatelessWidget {
           fontSize: 16,
         ),
         child: AnimatedTextKit(
+          repeatForever: true,
           animatedTexts: [
-            TyperAnimatedText('Error\n$error'),
+            TyperAnimatedText(
+              'Error\n$error',
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
