@@ -7,7 +7,7 @@ part 'movies_state.dart';
 
 class MoviesCubit extends Cubit<MoviesState> {
   MoviesCubit({required this.initialPage}) : super(MoviesInitial());
-  final int initialPage;
+  int initialPage;
   void loadMoviePopular() {
     emit(MoviesLoading());
     MoviesService.instance.loadMoviePopular(initialPage).then(
@@ -16,5 +16,17 @@ class MoviesCubit extends Cubit<MoviesState> {
             (success) => emit(MoviesListSuccess(movies: success)),
           ),
         );
+  }
+
+  void getNextPage() {
+    initialPage++;
+    loadMoviePopular();
+  }
+
+  void getPreviousPage() {
+    if (initialPage > 1) {
+      initialPage--;
+      loadMoviePopular();
+    }
   }
 }

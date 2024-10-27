@@ -16,16 +16,23 @@ class MovieCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        // color: MyColors.myWhite,
+        // color: Colors.amber,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: AppColors.kPrimaryColor, width: .75),
       ),
       child: GridTile(
         footer: Container(
           width: double.infinity,
+          decoration: const BoxDecoration(
+            color: Colors.black54,
+            borderRadius: BorderRadiusDirectional.only(
+              bottomEnd: Radius.circular(8),
+              bottomStart: Radius.circular(8),
+            ),
+          ),
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          color: Colors.black54,
           alignment: Alignment.bottomCenter,
           child: CustomText(
             text: movie.title ?? '',
@@ -38,7 +45,7 @@ class MovieCardItem extends StatelessWidget {
         ),
         child: CustomCachedNetworkImage(
           context: context,
-          borderRadius: 9,
+          borderRadius: 8,
           url: Utils.getImageUrl(
             movie.posterPath.toString(),
           ),
