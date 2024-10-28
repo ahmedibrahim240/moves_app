@@ -7,9 +7,14 @@ import 'package:moves_app/logic/app_bloc_observer.dart';
 import 'package:moves_app/logic/movies_cubit/movies_cubit.dart';
 
 import 'utils/extensions/size_config.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   Bloc.observer = AppBlocObserver();
   runApp(const MovesApp());

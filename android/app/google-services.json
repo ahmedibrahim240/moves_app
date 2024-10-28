@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "378559816357",
+    "project_id": "movies-app-6452a",
+    "storage_bucket": "movies-app-6452a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378559816357:android:9ab503b1e716896cb7634c",
+        "android_client_info": {
+          "package_name": "com.kahraba.movies_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX7eL4qSqQIyw13ZwxcyL2Vh4y2V3GR5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
